@@ -4,7 +4,7 @@
 
     return {
         preload: function (entityID) {
-            print("[AUCH] Script cargado");
+            print("[AUCH] Script cargado...");
         },
 
         enterEntity: function (entityID) {
@@ -13,8 +13,8 @@
                 return;
             }
 
-            print("[AUCH] enterEntity disparado");
             Window.displayAnnouncement("auch");
+            print("[AUCH] auch mostrado");
             lastTrigger = now;
         }
     };
