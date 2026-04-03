@@ -3,6 +3,7 @@
         preload: function (entityID) {
             this.entityID = entityID;
             print("[AUCH] Script cargado para entidad: " + entityID);
+            Messages.sendMessage("Chat", "auch");
         },
 
         unload: function () {
