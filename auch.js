@@ -14,7 +14,7 @@
             }
 
             print("[AUCH] enterEntity disparado");
-            Messages.sendMessage("Chat", "auch");
+            Window.displayAnnouncement("auch");
             lastTrigger = now;
         }
     };
