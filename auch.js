@@ -1,21 +1,23 @@
 (function () {
-    var lastTrigger = 0;
-    var COOLDOWN_MS = 1000;
+    var inside = false;
 
     return {
         preload: function (entityID) {
-            print("[AUCH] Script cargado...");
+            this.entityID = entityID;
+            print("[AUCH] Script cargado");
         },
 
         enterEntity: function (entityID) {
-            var now = Date.now();
-            if (now - lastTrigger < COOLDOWN_MS) {
+            if (inside) {
                 return;
             }
+            inside = true;
+            print("[AUCH] El avatar tocó/empujó la caja");
+        },
 
-            Window.displayAnnouncement("auch");
-            print("[AUCH] auch mostrado");
-            lastTrigger = now;
+        leaveEntity: function (entityID) {
+            inside = false;
+            print("[AUCH] El avatar salió de la caja");
         }
     };
 });
