@@ -2,19 +2,17 @@
     return {
         preload: function (entityID) {
             this.entityID = entityID;
-            print("[AUCH] Script cargado para entidad: " + entityID);
-            Messages.sendMessage("Chat", "auch");
-        },
-
-        unload: function () {
-            print("[AUCH] Script descargado");
+            print("[AUCH] Script cargado: " + entityID);
         },
 
         collisionWithEntity: function (thisEntityID, otherEntityID, collision) {
-            print("[AUCH] Colisión detectada con: " + otherEntityID);
+            print("[AUCH] collisionWithEntity disparado");
+            print("[AUCH] thisEntityID: " + thisEntityID);
+            print("[AUCH] otherEntityID: " + otherEntityID);
+            print("[AUCH] MyAvatar.sessionUUID: " + MyAvatar.sessionUUID);
 
             if (otherEntityID === MyAvatar.sessionUUID) {
-                print("[AUCH] El avatar local colisionó");
+                print("[AUCH] Colisión con mi avatar");
                 Messages.sendMessage("Chat", "auch");
             }
         }
